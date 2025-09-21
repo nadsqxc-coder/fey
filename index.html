@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>💌 For My Lovey 💌</title>
+
+  <!-- Romantic Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Dancing Script', cursive;
+      background: lavender;
+      color: #333;
+      overflow-x: hidden;
+      text-align: center;
+    }
+
+    header {
+      background: #fff;
+      padding: 15px;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+
+    nav button {
+      background: #ffb6c1;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 20px;
+      font-family: 'Dancing Script', cursive;
+      transition: 0.3s;
+    }
+
+    nav button:hover {
+      background: #ff69b4;
+      color: white;
+      transform: scale(1.1);
+    }
+
+    section {
+      display: none;
+      padding: 40px 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    section.active {
+      display: block;
+    }
+
+    h2 {
+      color: #d63384;
+      margin-bottom: 15px;
+      font-size: 42px;
+      font-family: 'Great Vibes', cursive;
+    }
+
+    p, li {
+      font-size: 22px;
+      line-height: 1.6;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    .notes ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .notes li {
+      background: #fff;
+      margin: 10px auto;
+      padding: 15px;
+      border-radius: 12px;
+      max-width: 450px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    /* Playlist list */
+    #playlist {
+      margin-top: 20px;
+      text-align: center;
+    }
+    #playlist li {
+      list-style: none;
+      margin: 8px 0;
+      padding: 10px;
+      background: #fff;
+      border-radius: 8px;
+      display: inline-block;
+      cursor: pointer;
+      font-size: 20px;
+      transition: 0.3s;
+    }
+    #playlist li:hover {
+      background: #ffb6c1;
+      color: white;
+      transform: scale(1.05);
+    }
+    #playlist li.active {
+      background: #d63384;
+      color: white;
+    }
+
+    /* Player Controls */
+    .controls {
+      margin-top: 15px;
+    }
+    .controls button {
+      background: #d63384;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 25px;
+      margin: 0 10px;
+      font-size: 18px;
+      cursor: pointer;
+      font-family: 'Dancing Script', cursive;
+      transition: 0.3s;
+    }
+    .controls button:hover {
+      background: #ff69b4;
+      transform: scale(1.1);
+    }
+
+    /* Password Section */
+    #passwordSection {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
+    #passwordSection input {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 220px;
+      margin-bottom: 10px;
+      font-family: 'Dancing Script', cursive;
+      font-size: 20px;
+      text-align: center;
+    }
+    #passwordSection button {
+      background: #d63384;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-family: 'Dancing Script', cursive;
+      font-size: 20px;
+    }
+
+    /* Floating Hearts & Butterflies */
+    .heart {
+      position: fixed;
+      bottom: -50px;
+      font-size: 28px;
+      opacity: 0.7;
+      animation: float 8s linear infinite;
+    }
+
+    @keyframes float {
+      from { transform: translateY(0) rotate(0); opacity: 0.8; }
+      to { transform: translateY(-120vh) rotate(360deg); opacity: 0; }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Password Protection -->
+  <div id="passwordSection">
+    <h2>🔒 Enter Secret Code</h2>
+    <input type="password" id="secret" placeholder="Enter password...">
+    <br>
+    <button onclick="checkPassword()">Unlock 💕</button>
+  </div>
+
+  <!-- Main Content -->
+  <div id="mainContent" style="display:none;">
+    <header>
+      <nav>
+        <button onclick="showSection('letter', true)">💌 Love Letter</button>
+        <button onclick="showSection('music')">🎶 Music</button>
+        <button onclick="showSection('notes')">📝 Notes</button>
+      </nav>
+    </header>
+
+    <!-- Love Letter -->
+    <section id="letter">
+      <h2>💌 My fey 💌</h2>
+      <p>
+        Hi lovey, I know lately it’s been hard for both of us pero u still choose me always :<br>
+        Thank you for never giving up on us kahit na may mga times na parang ang bigat at ang hirap.<br>
+        I know I’m not perfect and I make mistakes, but you still choose to stay, to understand, and to love me.<br>
+        That means so much to me more than I can ever put into words.
+      </p>
+      <p>
+        Ikaw yung safe place ko, the one I want to run to no matter what happens.<br>
+        Kahit anong hirap, kahit ilang tampuhan, ikaw at ikaw pa rin yung pipiliin ko.<br>
+        I promise to love you through the hard days, celebrate with you on the good days,<br>
+        and hold on to you every single day in between.
+      </p>
+      <p>Mahal na mahal kita, always and forever. 💕</p>
+    </section>
+
+    <!-- Music Playlist -->
+    <section id="music">
+      <h2>🎶 Our Songs 🎶</h2>
+      <audio id="audioPlayer" controls></audio>
+      <p id="nowPlaying"></p>
+      <ul id="playlist"></ul>
+      <div class="controls">
+        <button onclick="prevSong()">⏮️ Prev</button>
+        <button onclick="nextSong()">⏭️ Next</button>
+      </div>
+    </section>
+
+    <!-- Notes -->
+    <section id="notes" class="notes">
+      <h2>📝 Notes for You 📝</h2>
+      <ul>
+        <li>💖 Take care always lalo na sa work mo pag pasok and pag uwi :></li>
+        <li>🍽️ Eat on time or kahit hindi ontime basta palagi mag eat okay?</li>
+        <li>😘 Dito lang daedae lagi 💋</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- Hidden Background Music for Love Letter -->
+  <audio id="bgSong"></audio>
+
+  <script>
+    // Songs list with GitHub raw links
+    const songs = [
+      { src: "https://raw.githubusercontent.com/nadsdfd/myfey/main/songs/pag-ibig-ikaw-at-ako.mp3.mp3", title: "Pag-ibig Ikaw at Ako — Earl Agustin" },
+      { src: "https://raw.githubusercontent.com/nadsdfd/myfey/main/songs/Eliza%20Maturan%20-%20Museo%20Lyrics.mp3", title: "Museo — Eliza Maturan" },
+      { src: "https://raw.githubusercontent.com/nadsdfd/myfey/main/songs/IV%20OF%20SPADES%20-%20Aura%20(Lyrics).mp3", title: "Aura — IV OF SPADES" }
+    ];
+
+    let currentSong = 0;
+    const audioPlayer = document.getElementById("audioPlayer");
+    const nowPlaying = document.getElementById("nowPlaying");
+    const bgSong = document.getElementById("bgSong");
+    const playlistEl = document.getElementById("playlist");
+
+    // Load & play song
+    function loadSong(index) {
+      currentSong = index;
+      audioPlayer.src = songs[index].src;
+      nowPlaying.textContent = "Now Playing: " + songs[index].title;
+      audioPlayer.play();
+
+      document.querySelectorAll("#playlist li").forEach(li => li.classList.remove("active"));
+      playlistEl.children[index].classList.add("active");
+    }
+
+    audioPlayer.addEventListener("ended", () => {
+      nextSong();
+    });
+
+    function nextSong() {
+      currentSong = (currentSong + 1) % songs.length;
+      loadSong(currentSong);
+    }
+
+    function prevSong() {
+      currentSong = (currentSong - 1 + songs.length) % songs.length;
+      loadSong(currentSong);
+    }
+
+    // Build playlist UI
+    songs.forEach((song, index) => {
+      const li = document.createElement("li");
+      li.textContent = song.title;
+      li.onclick = () => loadSong(index);
+      playlistEl.appendChild(li);
+    });
+
+    // Password check
+    function checkPassword() {
+      const input = document.getElementById("secret").value;
+      if (input === "luvleyfey") {
+        document.getElementById("passwordSection").style.display = "none";
+        document.getElementById("mainContent").style.display = "block";
+        loadSong(currentSong);
+      } else {
+        alert("❌ Wrong password, try again!");
+      }
+    }
+
+    // Section control
+    function showSection(id, playBg = false) {
+      document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
+      document.getElementById(id).classList.add("active");
+
+      if (playBg) {
+        bgSong.src = songs[0].src; // auto play Pag-ibig
+        bgSong.play();
+      } else {
+        bgSong.pause();
+        bgSong.currentTime = 0;
+      }
+    }
+
+    // Floating hearts & butterflies
+    function createFloatingEmoji() {
+      const emojis = ["💜","💖","🦋","💕"];
+      const emoji = document.createElement("div");
+      emoji.className = "heart";
+      emoji.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+      emoji.style.left = Math.random() * 100 + "vw";
+      emoji.style.animationDuration = (5 + Math.random() * 5) + "s";
+      document.body.appendChild(emoji);
+      setTimeout(() => emoji.remove(), 8000);
+    }
+    setInterval(createFloatingEmoji, 1200);
+  </script>
+</body>
+</html>
